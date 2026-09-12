@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>The Sister Show 🎀</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Pacifico&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+```
+
+</head>
+
+<body>
+
+```
+<!-- Floating decorations -->
+<div class="decorations">
+    <span>♡</span>
+    <span>✦</span>
+    <span>🎀</span>
+    <span>♡</span>
+    <span>✧</span>
+    <span>♡</span>
+    <span>✦</span>
+</div>
+
+
+<!-- =========================
+     HERO
+========================== -->
+
+<main class="hero" id="home">
+
+    <div class="hero-top">
+        <span>✦ A VERY SPECIAL PRESENTATION ✦</span>
+    </div>
+
+    <div class="hero-content">
+
+        <p class="small-title">THE</p>
+
+        <h1>
+            SISTER
+            <span>SHOW</span>
+        </h1>
+
+        <div class="ribbon">
+            SEASON 01
+        </div>
+
+        <p class="intro">
+            A limited edition story about
+            <br>
+            love, chaos, laughter & sisterhood.
+        </p>
+
+        <button class="start-btn" onclick="startExperience()">
+            <span>▶</span> START THE EXPERIENCE
+        </button>
+
+    </div>
+
+    <div class="scroll">
+        SCROLL TO ENTER
+        <div class="line"></div>
+    </div>
+
+</main>
+
+
+<!-- =========================
+     EPISODE MENU
+========================== -->
+
+<section class="episodes" id="episodes">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">WELCOME TO THE STORY</p>
+
+        <h2>
+            Previously on...
+            <span>us ♡</span>
+        </h2>
+
+        <p>
+            Every sister has a story.
+            <br>
+            This one happens to be ours.
+        </p>
+
+    </div>
+
+
+    <div class="episode-grid">
+
+        <!-- Episode 01 -->
+        <article class="episode-card">
+
+            <div class="episode-number">
+                01
+            </div>
+
+            <div class="episode-info">
+
+                <p>THE BEGINNING</p>
+
+                <h3>
+                    The Origin
+                    Story
+                </h3>
+
+                <span>
+                    Before everything became chaotic...
+                </span>
+
+            </div>
+
+            <button onclick="openEpisode(1)">
+                OPEN →
+            </button>
+
+        </article>
+
+
+        <!-- Episode 02 -->
+        <article class="episode-card pink">
+
+            <div class="episode-number">
+                02
+            </div>
+
+            <div class="episode-info">
+
+                <p>MAIN CHARACTER</p>
+
+                <h3>
+                    Her Era
+                </h3>
+
+                <span>
+                    The girl. The icon. The problem.
+                </span>
+
+            </div>
+
+            <button onclick="openEpisode(2)">
+                OPEN →
+            </button>
+
+        </article>
+
+
+        <!-- Episode 03 -->
+        <article class="episode-card dark">
+
+            <div class="episode-number">
+                03
+            </div>
+
+            <div class="episode-info">
+
+                <p>THE LORE</p>
+
+                <h3>
+                    Our
+                    Memories
+                </h3>
+
+                <span>
+                    Things only we understand.
+                </span>
+
+            </div>
+
+            <button onclick="openEpisode(3)">
+                OPEN →
+            </button>
+
+        </article>
+
+
+        <!-- Episode 04 -->
+        <article class="episode-card">
+
+            <div class="episode-number">
+                04
+            </div>
+
+            <div class="episode-info">
+
+                <p>EVIDENCE</p>
+
+                <h3>
+                    Camera
+                    Roll
+                </h3>
+
+                <span>
+                    Proof that we were actually cute.
+                </span>
+
+            </div>
+
+            <button onclick="openEpisode(4)">
+                OPEN →
+            </button>
+
+        </article>
+
+
+        <!-- Episode 05 -->
+        <article class="episode-card pink">
+
+            <div class="episode-number">
+                05
+            </div>
+
+            <div class="episode-info">
+
+                <p>SISTER AWARDS</p>
+
+                <h3>
+                    Awards
+                    Night
+                </h3>
+
+                <span>
+                    Extremely serious nominations.
+                </span>
+
+            </div>
+
+            <button onclick="openEpisode(5)">
+                OPEN →
+            </button>
+
+        </article>
+
+
+        <!-- Episode 06 -->
+        <article class="episode-card dark">
+
+            <div class="episode-number">
+                06
+            </div>
+
+            <div class="episode-info">
+
+                <p>THE FINALE</p>
+
+                <h3>
+                    A Letter
+                    To You
+                </h3>
+
+                <span>
+                    Okay... time to get emotional.
+                </span>
+
+            </div>
+
+            <button onclick="openEpisode(6)">
+                OPEN →
+            </button>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EPISODE CONTENT
+========================== -->
+
+<section class="story" id="story">
+
+    <div class="story-inner">
+
+        <div class="story-label">
+            EPISODE <span id="episodeNumber">01</span>
+        </div>
+
+        <h2 id="episodeTitle">
+            The Origin Story
+        </h2>
+
+        <p id="episodeText">
+            Every legendary story has a beginning.
+            Ours started with two girls who had absolutely
+            no idea how many memories they were about to create.
+        </p>
+
+        <p id="episodeMemoryText">
+            From the very first day I came into this world,
+            I opened my eyes and found you there.
+            You were there from the beginning — my first memories,
+            my childhood, and a part of almost every chapter of my life.
+        </p>
+
+
+        <div class="memory-box">
+
+            <div class="fake-photo" id="singlePhoto">
+                <img id="episodeImage" src="ep1.png" alt="Beautiful memory">
+            </div>
+
+            <div class="photo-gallery" id="episodeGallery"></div>
+
+
+            <div class="memory-note">
+
+                <span id="memoryNumber">
+                    MEMORY #001
+                </span>
+
+                <h3 id="memoryQuote">
+                    "We had no idea..."
+                </h3>
+
+                <p id="memoryNoteText">
+                    And somehow, years later,
+                    here we are.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button class="next-btn" onclick="nextEpisode()">
+            NEXT EPISODE →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FUNNY SECTION
+========================== -->
+
+<section class="funny">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            CLASSIFIED INFORMATION
+        </p>
+
+        <h2>
+            The Sister
+            <span>Files 🕵🏻‍♀️</span>
+        </h2>
+
+        <p>
+            Please keep this information confidential.
+            <br>
+            Especially from Mom.
+        </p>
+
+    </div>
+
+
+    <div class="file-card">
+
+        <div class="file-header">
+            <span>CONFIDENTIAL</span>
+            <span>FILE #SISTER-001</span>
+        </div>
+
+        <div class="file-body">
+
+            <div class="fake-id-photo">
+                <img src="CONFIDENTIAL.png" alt="Sister memory">
+            </div>
+
+            <div class="file-info">
+
+                <p>
+                    <strong>NAME:</strong>
+                    YOUR SISTER
+                </p>
+
+                <p>
+                    <strong>STATUS:</strong>
+                    CHAOTIC
+                </p>
+
+                <p>
+                    <strong>THREAT LEVEL:</strong>
+                    ████████░░
+                </p>
+
+                <p>
+                    <strong>KNOWN CRIMES:</strong>
+                </p>
+
+                <ul>
+                    <li>Stealing my clothes</li>
+                    <li>Saying "5 minutes" and taking 45</li>
+                    <li>Yelling way too much 😂</li>
+                    <li>Doing everything possible to avoid cleaning</li>
+                    <li>Hating cleaning with her whole heart 😂</li>
+                    <li>Still somehow being my favorite person</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="file-stamp">
+            APPROVED ♡
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     AWARDS
+========================== -->
+
+<section class="awards">
+
+    <div class="section-heading">
+
+        <p class="eyebrow">
+            THE ANNUAL CEREMONY
+        </p>
+
+        <h2>
+            Sister
+            <span>Awards 🏆</span>
+        </h2>
+
+    </div>
+
+
+    <div class="award-grid">
+
+        <div class="award">
+            <div class="trophy">🏆</div>
+            <h3>Best Sister</h3>
+            <p>Obviously.</p>
+        </div>
+
+        <div class="award">
+            <div class="trophy">💅</div>
+            <h3>Best Style</h3>
+            <p>It's giving main character.</p>
+        </div>
+
+        <div class="award">
+            <div class="trophy">😂</div>
+            <h3>Funniest Human</h3>
+            <p>Mostly unintentionally.</p>
+        </div>
+
+        <div class="award">
+            <div class="trophy">🍟</div>
+            <h3>Food Thief</h3>
+            <p>My fries never stood a chance.</p>
+        </div>
+
+        <div class="award">
+            <div class="trophy">👑</div>
+            <h3>Main Character</h3>
+            <p>She knows it.</p>
+        </div>
+
+        <div class="award">
+            <div class="trophy">💗</div>
+            <h3>Favorite Person</h3>
+            <p>Don't tell the others.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MINI GAME -->
+<section class="follow-game" id="followGame">
+
+    <div class="game-container">
+
+        <p class="eyebrow">A LITTLE SURPRISE</p>
+
+        <h2>MISSION: <span>FOLLOW ME 🎀</span></h2>
+
+        <p class="game-intro">
+            Think you can make it to the end?
+            <br>
+            Let's see...
+        </p>
+
+        <button class="game-start" onclick="startGame()">
+            START THE MISSION →
+        </button>
+
+        <div class="game-content" id="gameContent">
+
+            <div class="game-step" id="gameStep">
+                <!-- JavaScript will put the game here -->
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     LETTER
+========================== -->
+
+<section class="letter">
+
+    <div class="letter-paper">
+
+        <p class="letter-small">
+            DEAR SISTER,
+        </p>
+
+        <h2>
+            Behind all the
+            <span>jokes...</span>
+        </h2>
+
+        <div class="letter-text">
+
+            <p>
+                Behind all the fights, the laughter,
+                the stupid conversations, the memories,
+                and all the moments that make absolutely
+                no sense to anyone else...
+            </p>
+
+            <p>
+                I'm really lucky that I get to call you
+                my sister.
+            </p>
+
+            <p>
+                I hope this new year of your life brings
+                you everything you deserve.
+            </p>
+
+            <p class="final-line">
+                And if I had to choose my sister again,
+                <strong>I would choose you.</strong>
+            </p>
+
+        </div>
+
+        <div class="signature">
+            Love you always ♡
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FINAL
+========================== -->
+
+<section class="finale">
+
+    <div class="confetti" id="confetti"></div>
+
+    <p>
+        SEASON 01 — FINALE
+    </p>
+
+    <h2>
+        HAPPY
+        <span>BIRTHDAY</span>
+    </h2>
+
+    <h3>
+        TO THE BEST SISTER EVER 🎀
+    </h3>
+
+    
+
+
+<button id="wishButton" onclick="wishButtonClick()">
+    MAKE A WISH ✨
+</button>
+
+<audio id="birthdayAudio" preload="auto">
+    <source src="birthday audio.mp3" type="audio/mpeg">
+</audio>
+
+
+<div id="funnyVideo" class="funny-video">
+    <video id="celebrateVideo" controls playsinline>
+        <source src="celebrate.mp4" type="video/mp4">
+        Your browser does not support video.
+    </video>
+</div>
+
+
+
+    <!-- =========================
+         DISCOVER MORE LETTERS
+    ========================== -->
+
+    <a 
+    href="letter.pdf" 
+    class="letter-download"
+    download="A_Letter_For_You.pdf"
+    style="color: #d94f70 !important; text-decoration: none !important;"
+>
+    Discover more letters ♡
+</a>
+
+    <div class="final-message" id="finalMessage">
+        ✦ may all your wishes come true ✦
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        Made with too much love & questionable decisions ♡
+    </p>
+
+    <span>
+        © THE SISTER SHOW
+    </span>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+
+</body>
+</html>

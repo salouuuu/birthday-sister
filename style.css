@@ -1,0 +1,2231 @@
+/* =========================================
+   THE SISTER SHOW
+   MAIN DESIGN
+========================================= */
+
+:root {
+    --cream: #fff8f2;
+    --pink: #f5c5d2;
+    --dark-pink: #d87591;
+    --wine: #552b3c;
+    --black: #241d20;
+    --white: #ffffff;
+    --soft: #f9e4e8;
+    --gold: #c99b62;
+
+    --serif: "Cormorant Garamond", serif;
+    --sans: "DM Sans", sans-serif;
+    --script: "Pacifico", cursive;
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--black);
+    font-family: var(--sans);
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   FLOATING DECORATIONS
+========================================= */
+
+.decorations span {
+    position: fixed;
+    z-index: 10;
+    pointer-events: none;
+
+    color: var(--dark-pink);
+    font-size: 20px;
+
+    animation: float 7s infinite ease-in-out;
+}
+
+.decorations span:nth-child(1) {
+    top: 15%;
+    left: 7%;
+}
+
+.decorations span:nth-child(2) {
+    top: 30%;
+    right: 8%;
+    animation-delay: 1s;
+}
+
+.decorations span:nth-child(3) {
+    top: 70%;
+    left: 4%;
+    animation-delay: 2s;
+}
+
+.decorations span:nth-child(4) {
+    top: 85%;
+    right: 10%;
+    animation-delay: 3s;
+}
+
+.decorations span:nth-child(5) {
+    top: 50%;
+    left: 90%;
+    animation-delay: 4s;
+}
+
+.decorations span:nth-child(6) {
+    top: 10%;
+    right: 25%;
+    animation-delay: 2s;
+}
+
+.decorations span:nth-child(7) {
+    bottom: 10%;
+    left: 25%;
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 100vh;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(245, 197, 210, .55),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(216, 117, 145, .18),
+            transparent 25%
+        ),
+        var(--cream);
+}
+
+.hero-top {
+    position: absolute;
+    top: 40px;
+
+    font-size: 10px;
+    letter-spacing: 4px;
+
+    color: var(--dark-pink);
+}
+
+.hero-content {
+    animation: heroAppear 1.5s ease forwards;
+}
+
+@keyframes heroAppear {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.small-title {
+    font-family: var(--serif);
+
+    font-size: 35px;
+    letter-spacing: 15px;
+
+    margin-bottom: -15px;
+
+    color: var(--wine);
+}
+
+.hero h1 {
+    font-family: var(--serif);
+
+    font-size: clamp(80px, 15vw, 190px);
+
+    font-weight: 500;
+    line-height: .75;
+    letter-spacing: -5px;
+
+    color: var(--wine);
+}
+
+.hero h1 span {
+    display: block;
+
+    font-family: var(--script);
+    font-size: .55em;
+    letter-spacing: 2px;
+
+    color: var(--dark-pink);
+
+    transform: rotate(-4deg);
+}
+
+.ribbon {
+    display: inline-block;
+
+    margin-top: 45px;
+    padding: 9px 28px;
+
+    border: 1px solid var(--wine);
+
+    font-size: 10px;
+    letter-spacing: 5px;
+
+    color: var(--wine);
+}
+
+.intro {
+    margin-top: 30px;
+
+    font-family: var(--serif);
+    font-size: 20px;
+    line-height: 1.4;
+
+    color: #725460;
+}
+
+.start-btn,
+.next-btn,
+.finale button {
+    margin-top: 35px;
+
+    padding: 16px 30px;
+
+    border: none;
+
+    background: var(--wine);
+    color: white;
+
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: .4s ease;
+}
+
+.start-btn:hover,
+.next-btn:hover,
+.finale button:hover {
+    background: var(--dark-pink);
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 30px rgba(85, 43, 60, .2);
+}
+
+.scroll {
+    position: absolute;
+
+    bottom: 30px;
+
+    font-size: 8px;
+    letter-spacing: 3px;
+
+    color: #967481;
+}
+
+.line {
+    width: 1px;
+    height: 45px;
+
+    margin: 10px auto 0;
+
+    background: var(--dark-pink);
+}
+
+
+/* =========================================
+   GENERAL SECTION
+========================================= */
+
+section {
+    padding: 120px 8%;
+}
+
+.section-heading {
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 70px;
+}
+
+.eyebrow {
+    font-size: 9px;
+    letter-spacing: 4px;
+
+    color: var(--dark-pink);
+
+    margin-bottom: 15px;
+}
+
+.section-heading h2 {
+    font-family: var(--serif);
+
+    font-size: clamp(45px, 7vw, 80px);
+
+    line-height: .9;
+    font-weight: 500;
+
+    color: var(--wine);
+}
+
+.section-heading h2 span {
+    display: block;
+
+    font-family: var(--script);
+    font-size: .65em;
+
+    color: var(--dark-pink);
+
+    transform: rotate(-3deg);
+}
+
+.section-heading > p:last-child {
+    margin-top: 25px;
+
+    line-height: 1.7;
+
+    color: #80626e;
+}
+
+
+/* =========================================
+   EPISODES
+========================================= */
+
+.episodes {
+    background: #fffdfb;
+}
+
+.episode-grid {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.episode-card {
+    min-height: 300px;
+
+    padding: 40px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    background: var(--soft);
+
+    border: 1px solid rgba(85, 43, 60, .08);
+
+    transition: .5s ease;
+}
+
+.episode-card:hover {
+    transform: translateY(-10px) rotate(-1deg);
+
+    box-shadow:
+        0 25px 50px rgba(85, 43, 60, .12);
+}
+
+.episode-card.pink {
+    background: #f4c8d5;
+}
+
+.episode-card.dark {
+    background: var(--wine);
+    color: white;
+}
+
+.episode-number {
+    font-family: var(--serif);
+
+    font-size: 80px;
+    line-height: .7;
+
+    opacity: .15;
+}
+
+.episode-info p {
+    font-size: 9px;
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+.episode-info h3 {
+    font-family: var(--serif);
+
+    font-size: 45px;
+    line-height: .9;
+
+    font-weight: 500;
+}
+
+.episode-info span {
+    display: block;
+
+    margin-top: 15px;
+
+    font-size: 12px;
+    opacity: .7;
+}
+
+.episode-card button {
+    align-self: flex-start;
+
+    margin-top: 20px;
+
+    padding: 10px 0;
+
+    background: none;
+    border: none;
+    border-bottom: 1px solid currentColor;
+
+    color: inherit;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================
+   STORY
+========================================= */
+
+.story {
+    background: var(--wine);
+    color: white;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.story-inner {
+    max-width: 850px;
+    width: 100%;
+
+    margin: auto;
+}
+
+.story-label {
+    font-size: 9px;
+    letter-spacing: 5px;
+
+    color: var(--pink);
+}
+
+.story h2 {
+    margin-top: 20px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(55px, 8vw, 100px);
+
+    font-weight: 400;
+    line-height: .85;
+}
+
+.story-inner > p {
+    max-width: 600px;
+
+    margin: 30px auto;
+
+    color: #ead9de;
+
+    line-height: 1.8;
+}
+
+.memory-box {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 40px;
+
+    margin: 60px auto;
+
+    max-width: 700px;
+}
+
+
+/* =========================================
+   SINGLE PHOTO
+========================================= */
+
+.fake-photo {
+    width: 170px !important;
+    height: 270px !important;
+
+    padding: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    transform: rotate(-5deg);
+
+    box-shadow:
+        5px 8px 15px rgba(0, 0, 0, .15);
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+}
+
+.fake-photo img {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+    object-position: center 20% !important;
+    transform: scale(1.25) !important;
+
+    display: block;
+}
+
+
+/* =========================================
+   MEMORY NOTE
+========================================= */
+
+.memory-note {
+    text-align: left;
+
+    max-width: 300px;
+}
+
+.memory-note > span {
+    font-size: 8px;
+    letter-spacing: 3px;
+
+    color: var(--pink);
+}
+
+.memory-note h3 {
+    margin-top: 15px;
+
+    font-family: var(--serif);
+
+    font-size: 35px;
+    font-weight: 400;
+}
+
+.memory-note p {
+    margin-top: 10px;
+
+    color: #dcc6cd;
+}
+
+
+/* =========================================
+   FUNNY FILE
+========================================= */
+
+.funny {
+    background: #f5e6df;
+}
+
+.file-card {
+    max-width: 850px;
+
+    margin: auto;
+    padding: 0;
+
+    background: #fffdf8;
+
+    border: 1px solid #c9b8af;
+
+    box-shadow:
+        10px 15px 0 rgba(85, 43, 60, .1);
+
+    position: relative;
+}
+
+.file-header {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 15px 25px;
+
+    background: var(--wine);
+
+    color: white;
+
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.file-body {
+    padding: 50px;
+
+    display: flex;
+
+    gap: 50px;
+}
+
+.fake-id-photo {
+    width: 180px;
+    height: 220px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #f1ded9;
+
+    padding: 5px;
+
+    transform: rotate(2deg);
+
+    box-shadow:
+        5px 8px 15px rgba(0, 0, 0, 0.15);
+
+    flex-shrink: 0;
+}
+
+.fake-id-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center 20%;
+    transform: scale(1.25);
+
+    display: block;
+}
+
+.file-info {
+    font-family: monospace;
+
+    font-size: 12px;
+    line-height: 2;
+}
+
+.file-info strong {
+    color: var(--dark-pink);
+}
+
+.file-info ul {
+    padding-left: 20px;
+
+    margin-top: 5px;
+}
+
+.file-stamp {
+    position: absolute;
+
+    right: 30px;
+    bottom: 30px;
+
+    padding: 10px;
+
+    border: 2px solid #c66c7e;
+
+    color: #c66c7e;
+
+    transform: rotate(-12deg);
+
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   AWARDS
+========================================= */
+
+.awards {
+    background: var(--cream);
+}
+
+.award-grid {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.award {
+    padding: 45px 25px;
+
+    text-align: center;
+
+    background: white;
+
+    border: 1px solid #f0dce2;
+
+    transition: .4s;
+}
+
+.award:hover {
+    transform: translateY(-8px) rotate(1deg);
+
+    border-color: var(--pink);
+}
+
+.trophy {
+    font-size: 40px;
+
+    margin-bottom: 20px;
+}
+
+.award h3 {
+    font-family: var(--serif);
+
+    font-size: 28px;
+
+    font-weight: 500;
+
+    color: var(--wine);
+}
+
+.award p {
+    margin-top: 8px;
+
+    font-size: 11px;
+
+    color: #91727e;
+}
+
+
+/* =========================================
+   LETTER
+========================================= */
+
+.letter {
+    background: #ead1d5;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+.letter-paper {
+    max-width: 800px;
+
+    padding: 80px;
+
+    background: #fffaf5;
+
+    box-shadow:
+        0 30px 60px rgba(85, 43, 60, .15);
+
+    transform: rotate(-1deg);
+}
+
+.letter-small {
+    font-size: 9px;
+    letter-spacing: 4px;
+
+    color: var(--dark-pink);
+}
+
+.letter-paper h2 {
+    margin-top: 25px;
+
+    font-family: var(--serif);
+
+    font-size: 65px;
+    line-height: .9;
+
+    font-weight: 400;
+
+    color: var(--wine);
+}
+
+.letter-paper h2 span {
+    font-family: var(--script);
+
+    color: var(--dark-pink);
+}
+
+.letter-text {
+    margin-top: 40px;
+
+    font-family: var(--serif);
+
+    font-size: 21px;
+    line-height: 1.7;
+
+    color: #684957;
+}
+
+.letter-text p {
+    margin-bottom: 25px;
+}
+
+.final-line {
+    font-size: 25px;
+}
+
+.final-line strong {
+    color: var(--dark-pink);
+}
+
+.signature {
+    margin-top: 40px;
+
+    font-family: var(--script);
+
+    font-size: 25px;
+
+    color: var(--wine);
+
+    transform: rotate(-3deg);
+}
+
+
+/* =========================================
+   FINALE
+========================================= */
+
+.finale {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background: var(--wine);
+
+    color: white;
+}
+
+.finale > p {
+    font-size: 9px;
+    letter-spacing: 5px;
+
+    color: var(--pink);
+}
+
+.finale h2 {
+    margin-top: 30px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(80px, 15vw, 180px);
+
+    font-weight: 400;
+
+    line-height: .7;
+}
+
+.finale h2 span {
+    display: block;
+
+    font-family: var(--script);
+
+    font-size: .5em;
+
+    color: var(--pink);
+
+    transform: rotate(-4deg);
+}
+
+.finale h3 {
+    margin-top: 40px;
+
+    font-family: var(--serif);
+
+    font-size: 25px;
+
+    font-weight: 400;
+}
+
+.final-message {
+    margin-top: 30px;
+
+    color: #e9ccd4;
+
+    font-family: var(--serif);
+
+    font-size: 18px;
+}
+
+
+/* =========================================
+   CONFETTI
+========================================= */
+
+.confetti span {
+    position: absolute;
+
+    font-size: 25px;
+
+    animation:
+        confettiFall 4s linear infinite;
+}
+
+@keyframes confettiFall {
+    from {
+        transform:
+            translateY(-100vh)
+            rotate(0);
+    }
+
+    to {
+        transform:
+            translateY(100vh)
+            rotate(720deg);
+    }
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    padding: 30px;
+
+    text-align: center;
+
+    background: #321b25;
+
+    color: #c9aab3;
+
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+footer span {
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: 8px;
+
+    opacity: .5;
+}
+
+
+/* =========================================
+   EPISODE 01
+   THE BEGINNING
+========================================= */
+
+#story.episode-1 {
+    background: #fff8f2;
+    color: #552b3c;
+}
+
+#story.episode-1 .story-label {
+    color: #d87591;
+}
+
+#story.episode-1 #episodeTitle {
+    color: #552b3c;
+}
+
+#story.episode-1 #episodeText,
+#story.episode-1 #episodeMemoryText {
+    color: #684957;
+}
+
+#story.episode-1 .memory-note {
+    color: #552b3c;
+}
+
+#story.episode-1 .memory-note > span {
+    color: #d87591;
+}
+
+#story.episode-1 .memory-note h3 {
+    color: #552b3c;
+}
+
+#story.episode-1 .memory-note p {
+    color: #80626e;
+}
+
+
+/* =========================================
+   EPISODE 02
+   HER ERA
+========================================= */
+
+#story.episode-2 {
+    background: #f9e4e8;
+    color: #552b3c;
+}
+
+#story.episode-2 .story-label {
+    color: #a84d70;
+}
+
+#story.episode-2 #episodeTitle {
+    color: #552b3c;
+}
+
+#story.episode-2 #episodeText,
+#story.episode-2 #episodeMemoryText {
+    color: #684957;
+}
+
+#story.episode-2 .memory-note {
+    color: #552b3c;
+}
+
+#story.episode-2 .memory-note > span {
+    color: #a84d70;
+}
+
+#story.episode-2 .memory-note h3 {
+    color: #552b3c;
+}
+
+#story.episode-2 .memory-note p {
+    color: #80626e;
+}
+
+
+/* =========================================
+   EPISODE 03
+   OUR LORE
+========================================= */
+
+#story.episode-3 {
+    background: #f4eee8;
+    color: #552b3c;
+}
+
+#story.episode-3 .story-label {
+    color: #9b6f78;
+}
+
+#story.episode-3 #episodeTitle {
+    color: #552b3c;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-style: italic;
+}
+
+#story.episode-3 #episodeText,
+#story.episode-3 #episodeMemoryText {
+    color: #684957;
+}
+
+#story.episode-3 .memory-note {
+    color: #552b3c;
+}
+
+#story.episode-3 .memory-note > span {
+    color: #9b6f78;
+}
+
+#story.episode-3 .memory-note h3 {
+    color: #552b3c;
+}
+
+#story.episode-3 .memory-note p {
+    color: #80626e;
+}
+
+
+/* =========================================
+   EPISODE 04
+   CAMERA ROLL
+========================================= */
+
+#story.episode-4 {
+    background: #f4eee8;
+    color: #552b3c;
+}
+
+#story.episode-4 .story-label {
+    color: #9b6f78;
+}
+
+#story.episode-4 #episodeTitle {
+    color: #552b3c;
+}
+
+#story.episode-4 #episodeText,
+#story.episode-4 #episodeMemoryText {
+    color: #684957;
+}
+
+#story.episode-4 .memory-box {
+    display: block;
+
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 55px auto;
+}
+
+
+/* =========================================
+   EPISODE 04 — GALLERY
+========================================= */
+
+#story.episode-4 #episodeGallery {
+    display: grid;
+
+    grid-template-columns:
+        140px
+        repeat(3, minmax(180px, 1fr))
+        140px;
+
+    grid-template-rows:
+        repeat(4, 150px);
+
+    gap: 20px;
+
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 50px auto;
+
+    align-items: center;
+}
+
+
+/* =========================================
+   ALL EPISODE 04 PHOTOS
+========================================= */
+
+#story.episode-4 #episodeGallery .gallery-photo {
+    background: white;
+
+    padding: 6px;
+
+    border-radius: 4px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 25px rgba(63, 53, 69, 0.15);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+
+    min-width: 0;
+}
+
+/* ZOOM PLUS FORT : transform: scale(1.25) pour zoomer au centre/haut */
+#story.episode-4 #episodeGallery .gallery-photo img {
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+    object-position: center 20% !important;
+    transform: scale(1.25) !important;
+
+    display: block;
+}
+
+
+/* =========================================
+   MAIN 6 PHOTOS
+========================================= */
+
+#story.episode-4 #episodeGallery .main-photo {
+    width: 100% !important;
+    height: 310px !important;
+
+    min-width: 0 !important;
+    max-width: none !important;
+
+    min-height: 0 !important;
+    max-height: none !important;
+
+    padding: 8px;
+
+    background: white;
+}
+
+
+/* Main photo positions */
+
+#story.episode-4 #episodeGallery .main-photo:nth-child(1) {
+    grid-column: 2;
+    grid-row: 1 / 3;
+
+    transform: rotate(-2deg);
+}
+
+#story.episode-4 #episodeGallery .main-photo:nth-child(2) {
+    grid-column: 3;
+    grid-row: 1 / 3;
+
+    transform: rotate(1.5deg);
+}
+
+#story.episode-4 #episodeGallery .main-photo:nth-child(3) {
+    grid-column: 4;
+    grid-row: 1 / 3;
+
+    transform: rotate(-1deg);
+}
+
+#story.episode-4 #episodeGallery .main-photo:nth-child(4) {
+    grid-column: 2;
+    grid-row: 3 / 5;
+
+    transform: rotate(2deg);
+}
+
+#story.episode-4 #episodeGallery .main-photo:nth-child(5) {
+    grid-column: 3;
+    grid-row: 3 / 5;
+
+    transform: rotate(-1.5deg);
+}
+
+#story.episode-4 #episodeGallery .main-photo:nth-child(6) {
+    grid-column: 4;
+    grid-row: 3 / 5;
+
+    transform: rotate(1deg);
+}
+
+
+/* =========================================
+   LEFT 4 PHOTOS
+========================================= */
+
+#story.episode-4 #episodeGallery .left-photo {
+    width: 130px !important;
+    height: 150px !important;
+
+    min-width: 130px !important;
+    max-width: 130px !important;
+
+    min-height: 150px !important;
+    max-height: 150px !important;
+
+    padding: 6px;
+
+    background: white;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 25px rgba(63, 53, 69, 0.20);
+}
+
+#story.episode-4 #episodeGallery .left-photo:nth-child(7) {
+    grid-column: 1;
+    grid-row: 1;
+    transform: rotate(-5deg);
+}
+
+#story.episode-4 #episodeGallery .left-photo:nth-child(8) {
+    grid-column: 1;
+    grid-row: 2;
+    transform: rotate(4deg);
+}
+
+#story.episode-4 #episodeGallery .left-photo:nth-child(9) {
+    grid-column: 1;
+    grid-row: 3;
+    transform: rotate(-3deg);
+}
+
+#story.episode-4 #episodeGallery .left-photo:nth-child(10) {
+    grid-column: 1;
+    grid-row: 4;
+    transform: rotate(5deg);
+}
+
+/* =========================================
+   RIGHT 4 PHOTOS
+========================================= */
+
+#story.episode-4 #episodeGallery .right-photo {
+    width: 130px !important;
+    height: 150px !important;
+
+    min-width: 130px !important;
+    max-width: 130px !important;
+
+    min-height: 150px !important;
+    max-height: 150px !important;
+
+    padding: 6px;
+
+    background: white;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 25px rgba(63, 53, 69, 0.20);
+}
+
+#story.episode-4 #episodeGallery .right-photo:nth-child(11) {
+    grid-column: 5;
+    grid-row: 1;
+    transform: rotate(5deg);
+}
+
+#story.episode-4 #episodeGallery .right-photo:nth-child(12) {
+    grid-column: 5;
+    grid-row: 2;
+    transform: rotate(-4deg);
+}
+
+#story.episode-4 #episodeGallery .right-photo:nth-child(13) {
+    grid-column: 5;
+    grid-row: 3;
+    transform: rotate(3deg);
+}
+
+#story.episode-4 #episodeGallery .right-photo:nth-child(14) {
+    grid-column: 5;
+    grid-row: 4;
+    transform: rotate(-5deg);
+}
+
+/* =========================================
+   EPISODE 04 — HOVER
+========================================= */
+
+#story.episode-4 #episodeGallery .gallery-photo:hover {
+    transform:
+        rotate(0deg)
+        scale(1.08);
+
+    box-shadow:
+        0 18px 35px rgba(63, 53, 69, 0.25);
+
+    z-index: 5;
+}
+
+
+/* =========================================
+   EPISODE 04 — MEMORY NOTE
+========================================= */
+
+#story.episode-4 .memory-note {
+    margin-top: 80px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    max-width: 500px;
+
+    text-align: center;
+}
+
+#story.episode-4 .memory-note h3 {
+    font-style: italic;
+}
+
+
+/* =========================================
+   EPISODE 05
+   AWARDS NIGHT
+========================================= */
+
+#story.episode-5 {
+    background: #fff3d9;
+    color: #5a4630;
+}
+
+#story.episode-5 .story-label {
+    color: #b58a45;
+}
+
+#story.episode-5 #episodeTitle {
+    color: #5a4630;
+
+    text-transform: uppercase;
+
+    letter-spacing: 5px;
+}
+
+#story.episode-5 #episodeText,
+#story.episode-5 #episodeMemoryText {
+    color: #735f45;
+}
+
+#story.episode-5 .memory-note {
+    color: #5a4630;
+}
+
+#story.episode-5 .memory-note > span {
+    color: #b58a45;
+}
+
+#story.episode-5 .memory-note h3 {
+    color: #5a4630;
+}
+
+#story.episode-5 .memory-note p {
+    color: #806d53;
+}
+
+
+/* =========================================
+   EPISODE 06
+   THE FINALE
+========================================= */
+
+#story.episode-6 {
+    background: #552b3c;
+    color: white;
+}
+
+#story.episode-6 .story-label {
+    color: #f5c5d2;
+}
+
+#story.episode-6 #episodeTitle {
+    color: white;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-style: italic;
+}
+
+#story.episode-6 #episodeText,
+#story.episode-6 #episodeMemoryText {
+    color: #fff8f2;
+}
+
+#story.episode-6 .memory-note {
+    color: white;
+}
+
+#story.episode-6 .memory-note > span {
+    color: #f5c5d2;
+}
+
+#story.episode-6 .memory-note h3 {
+    color: white;
+}
+
+#story.episode-6 .memory-note p {
+    color: #dcc6cd;
+}
+
+
+/* =========================================
+   EPISODE 03 — PHOTO GALLERY
+========================================= */
+
+#episodeGallery {
+    display: none;
+
+    grid-template-columns:
+        repeat(3, 225px);
+
+    gap: 35px;
+
+    justify-content: center;
+
+    width: 745px;
+
+    margin: 40px auto;
+}
+
+#episodeGallery .gallery-photo {
+    width: 225px !important;
+    height: 280px !important;
+
+    min-width: 225px !important;
+    max-width: 225px !important;
+
+    min-height: 280px !important;
+    max-height: 280px !important;
+
+    padding: 9px;
+
+    box-sizing: border-box;
+
+    background: white;
+
+    overflow: hidden;
+
+    box-shadow:
+        7px 11px 24px rgba(0, 0, 0, 0.20);
+}
+
+#episodeGallery .gallery-photo img {
+    width: 207px !important;
+    height: 262px !important;
+
+    object-fit: cover !important;
+    object-position: center 20% !important;
+    transform: scale(1.25) !important;
+
+    display: block;
+}
+
+
+/* =========================================
+   EPISODE 03 — ROTATIONS
+========================================= */
+
+#episodeGallery .gallery-photo:nth-child(1) {
+    transform: rotate(-3deg);
+}
+
+#episodeGallery .gallery-photo:nth-child(2) {
+    transform: rotate(3deg);
+}
+
+#episodeGallery .gallery-photo:nth-child(3) {
+    transform: rotate(2deg);
+}
+
+#episodeGallery .gallery-photo:nth-child(4) {
+    transform: rotate(-4deg);
+}
+
+#episodeGallery .gallery-photo:nth-child(5) {
+    transform: rotate(-2deg);
+}
+
+#episodeGallery .gallery-photo:nth-child(6) {
+    transform: rotate(4deg);
+}
+
+#episodeGallery .gallery-photo:hover {
+    transform:
+        rotate(0deg)
+        scale(1.04);
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   RESPONSIVE — TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+    section {
+        padding: 90px 6%;
+    }
+
+    .hero h1 {
+        font-size: 90px;
+    }
+
+    .small-title {
+        font-size: 25px;
+    }
+
+    .episode-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .award-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .memory-box {
+        flex-direction: column;
+    }
+
+    .memory-note {
+        text-align: center;
+    }
+
+    .file-body {
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+    }
+
+    .file-info ul {
+        text-align: left;
+    }
+
+    .letter-paper {
+        padding: 50px 30px;
+    }
+
+    .letter-paper h2 {
+        font-size: 50px;
+    }
+
+
+    /* =====================================
+       GENERAL GALLERY TABLET
+    ===================================== */
+
+    #episodeGallery {
+        grid-template-columns:
+            repeat(2, 225px);
+
+        width: 500px;
+    }
+
+
+    /* =====================================
+       EPISODE 04 TABLET
+    ===================================== */
+
+    #story.episode-4 #episodeGallery {
+        display: grid;
+
+        grid-template-columns:
+            110px
+            repeat(2, minmax(180px, 1fr));
+
+        grid-template-rows:
+            repeat(3, 160px);
+
+        gap: 20px;
+
+        width: 100%;
+        max-width: 1400px;
+
+        margin: 50px auto;
+
+        align-items: center;
+    }
+
+    #story.episode-4 #episodeGallery .main-photo {
+        height: 220px !important;
+    }
+
+    #story.episode-4 #episodeGallery .left-photo {
+        width: 100px !important;
+        height: 120px !important;
+
+        min-width: 100px !important;
+        max-width: 100px !important;
+
+        min-height: 120px !important;
+        max-height: 120px !important;
+    }
+
+    #story.episode-4 #episodeGallery .right-photo {
+        display: none;
+    }
+
+    #story.episode-4 #episodeGallery .left-photo:nth-child(7) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    #story.episode-4 #episodeGallery .left-photo:nth-child(8) {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    #story.episode-4 #episodeGallery .left-photo:nth-child(9) {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    #story.episode-4 #episodeGallery .left-photo:nth-child(10) {
+        display: none;
+    }
+
+    #story.episode-4 #episodeGallery .main-photo:nth-child(1) {
+        grid-column: 2;
+        grid-row: 1;
+
+        transform: rotate(-2deg);
+    }
+
+    #story.episode-4 #episodeGallery .main-photo:nth-child(2) {
+        grid-column: 3;
+        grid-row: 1;
+
+        transform: rotate(1.5deg);
+    }
+
+    #story.episode-4 #episodeGallery .main-photo:nth-child(3) {
+        grid-column: 2;
+        grid-row: 2;
+
+        transform: rotate(-1deg);
+    }
+
+    #story.episode-4 #episodeGallery .main-photo:nth-child(4) {
+        grid-column: 3;
+        grid-row: 2;
+
+        transform: rotate(2deg);
+    }
+
+    #story.episode-4 #episodeGallery .main-photo:nth-child(5) {
+        grid-column: 2;
+        grid-row: 3;
+
+        transform: rotate(-1.5deg);
+    }
+
+    #story.episode-4 #episodeGallery .main-photo:nth-child(6) {
+        grid-column: 3;
+        grid-row: 3;
+
+        transform: rotate(1deg);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+    .hero h1 {
+        font-size: 70px;
+    }
+
+    .hero-top {
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
+
+    .award-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fake-photo {
+        width: 220px !important;
+        height: 270px !important;
+    }
+
+    .file-body {
+        padding: 30px 20px;
+    }
+
+
+    /* =====================================
+       GENERAL GALLERY MOBILE
+    ===================================== */
+
+    #episodeGallery {
+        grid-template-columns:
+            repeat(1, 225px);
+
+        width: 225px;
+
+        gap: 25px;
+    }
+
+    #episodeGallery .gallery-photo {
+        width: 225px !important;
+        height: 280px !important;
+    }
+
+    #episodeGallery .gallery-photo img {
+        width: 207px !important;
+        height: 262px !important;
+
+        object-fit: cover !important;
+        object-position: center 20% !important;
+        transform: scale(1.25) !important;
+    }
+
+
+    /* =====================================
+       EPISODE 04 MOBILE
+    ===================================== */
+
+    #story.episode-4 #episodeGallery {
+        grid-template-columns:
+            75px
+            1fr;
+
+        grid-template-rows:
+            repeat(6, 160px);
+
+        gap: 12px;
+
+        width: 100%;
+        max-width: 430px;
+    }
+
+    #story.episode-4 #episodeGallery .main-photo {
+        width: 100% !important;
+        height: 155px !important;
+    }
+
+    #story.episode-4 #episodeGallery .left-photo {
+        width: 70px !important;
+        height: 85px !important;
+
+        min-width: 70px !important;
+        max-width: 70px !important;
+
+        min-height: 85px !important;
+        max-height: 85px !important;
+    }
+
+    #story.episode-4 #episodeGallery .right-photo {
+        display: none;
+    }
+
+
+    /* Left photos */
+
+    #story.episode-4 #episodeGallery .left-photo:nth-child(7) {
+        grid-column: 1;
+        grid-row: 1;
+
+        transform: rotate(-5deg);
+    }
+
+    #story.episode-4 #episodeGallery .left-photo:nth-child(8) {
+        grid-column: 1;
+        grid-row: 2;
+
+        transform: rotate(4deg);
+    }
+
+    #story.episode-4 #episodeGallery .left-photo:nth-child(9) {
+        grid-column: 1;
+        grid-row: 3;
+
+        transform: rotate(-3deg);
+    }
+
+    #story.episode-4 #episodeGallery .left-photo:nth-child(10) {
+        grid-column: 1;
+        grid-row: 4;
+
+        transform: rotate(5deg);
+    }
+
+
+    /* Main photos */
+
+    #story.episode-4 #episodeGallery .main-photo:nth-child(1) {
+        grid-column: 2;
+        grid-row: 1;
+
+        transform: rotate(-2deg);
+    }
+
+    #story.episode-4 #episodeGallery .main-photo:nth-child(2) {
+        grid-column: 2;
+        grid-row: 2;
+
+        transform: rotate(1.5deg);
+    }
+
+    #story.episode-4 #episodeGallery .main-photo:nth-child(3) {
+        grid-column: 2;
+        grid-row: 3;
+
+        transform: rotate(-1deg);
+    }
+
+    #story.episode-4 #episodeGallery .main-photo:nth-child(4) {
+        grid-column: 2;
+        grid-row: 4;
+
+        transform: rotate(2deg);
+    }
+
+    #story.episode-4 #episodeGallery .main-photo:nth-child(5) {
+        grid-column: 2;
+        grid-row: 5;
+
+        transform: rotate(-1.5deg);
+    }
+
+    #story.episode-4 #episodeGallery .main-photo:nth-child(6) {
+        grid-column: 2;
+        grid-row: 6;
+
+        transform: rotate(1deg);
+    }
+
+
+    /* Episode 04 note */
+
+    #story.episode-4 .memory-note {
+        margin-top: 60px;
+
+        padding: 0 15px;
+    }
+
+
+    /* =========================================
+       FIX MOBILE IMAGES
+    ========================================= */
+
+    #story.episode-4 #episodeGallery .left-photo img {
+        width: 100% !important;
+        height: 100% !important;
+
+        object-fit: cover !important;
+        object-position: center 20% !important;
+        transform: scale(1.25) !important;
+
+        display: block !important;
+    }
+}
+  /* =========================================
+   DISCOVER MORE LETTERS
+========================================= */
+
+.letter-download,
+.letter-download:link,
+.letter-download:visited,
+.letter-download:active,
+.letter-download:focus {
+    display: inline-block;
+
+    margin-top: 25px;
+    padding: 14px 28px;
+
+    border: 1px solid #d94f70;
+
+    background: transparent;
+
+    color: #d94f70 !important;
+
+    text-decoration: underline !important;
+    text-decoration-line: underline !important;
+    text-decoration-color: #d94f70 !important;
+    text-decoration-thickness: 1px !important;
+    text-underline-offset: 4px;
+
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 3px;
+
+    cursor: pointer;
+    transition: .4s ease;
+}
+
+.letter-download:hover {
+    background: #d94f70 !important;
+    color: white !important;
+
+    text-decoration: underline !important;
+    text-decoration-color: white !important;
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 12px 25px rgba(217, 79, 112, .25);
+}
+
+
+
+/* =========================================
+   MISSION: FOLLOW ME
+========================================= */
+
+.follow-game {
+    min-height: 80vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 100px 20px;
+
+    background: var(--soft);
+    text-align: center;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 850px;
+}
+
+.follow-game h2 {
+    font-family: var(--serif);
+    font-size: clamp(42px, 7vw, 80px);
+    color: var(--wine);
+    margin: 10px 0 20px;
+}
+
+.follow-game h2 span {
+    color: var(--dark-pink);
+}
+
+.game-intro {
+    font-family: var(--sans);
+    color: var(--wine);
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.game-start,
+.game-final-button {
+    border: 1px solid var(--dark-pink);
+    background: var(--dark-pink);
+    color: white;
+
+    padding: 15px 30px;
+
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+.game-start:hover,
+.game-final-button:hover {
+    background: var(--wine);
+    transform: translateY(-3px);
+}
+
+.game-content {
+    display: none;
+
+    margin-top: 50px;
+}
+
+.game-step {
+    background: var(--cream);
+
+    padding: 50px 30px;
+
+    border: 1px solid var(--pink);
+
+    box-shadow:
+        0 15px 40px rgba(85, 43, 60, .08);
+
+    animation: gameAppear .5s ease;
+}
+
+@keyframes gameAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.game-number {
+    color: var(--dark-pink);
+
+    font-family: var(--sans);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+.game-step h3 {
+    font-family: var(--serif);
+
+    font-size: 38px;
+
+    color: var(--wine);
+
+    margin-bottom: 15px;
+}
+
+.game-step p {
+    font-family: var(--sans);
+
+    color: var(--wine);
+
+    line-height: 1.7;
+}
+
+.game-buttons,
+.word-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 35px;
+}
+
+.game-buttons button,
+.word-buttons button {
+    position: relative;
+
+    min-width: 145px;
+    padding: 15px 24px;
+
+    border: 1px solid #d94f70;
+    border-radius: 2px;
+
+    background: #fff8f2;
+    color: #d94f70;
+
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        color .3s ease,
+        box-shadow .3s ease;
+}
+
+/* petit symbole décoratif */
+.game-buttons button::before,
+.word-buttons button::before {
+    content: "♡";
+
+    margin-right: 8px;
+
+    font-size: 11px;
+
+    opacity: .7;
+}
+
+/* HOVER */
+.game-buttons button:hover,
+.word-buttons button:hover {
+    background: #d94f70;
+    color: white;
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 20px rgba(217, 79, 112, .20);
+}
+
+/* petit effet au clic */
+.game-buttons button:active,
+.word-buttons button:active {
+    transform: translateY(-1px) scale(.98);
+}
+
+/* bouton déjà utilisé */
+.game-buttons button:disabled,
+.word-buttons button:disabled {
+    background: #f5c5d2;
+    color: white;
+
+    border-color: #f5c5d2;
+
+    opacity: .6;
+
+    cursor: default;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================
+   FUNNY CELEBRATE VIDEO
+========================================= */
+
+.funny-video {
+    display: none;
+    margin: 35px auto 20px;
+    width: min(600px, 90%);
+    animation: videoAppear .6s ease;
+}
+
+.funny-video video {
+    width: 100%;
+    max-height: 500px;
+    border-radius: 18px;
+    display: block;
+    box-shadow: 0 20px 50px rgba(85, 43, 60, .25);
+}
+
+@keyframes videoAppear {
+    from {
+        opacity: 0;
+        transform: scale(.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
